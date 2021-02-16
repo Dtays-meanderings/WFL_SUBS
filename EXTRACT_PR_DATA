@@ -1,0 +1,10 @@
+DEF INT _Nr
+
+;Write all measure point data to tech log
+_Nr=0
+REPEAT
+MCTPROT("PROBEDATA"<<_Nr+1<<"("<<MC_Name[_Nr]<<","<<MC_SetVal[_Nr]<<","<<MC_UTol[_Nr]<<","<<MC_LTol[_Nr]<<","<<MC_ActVal[_Nr]<<","<<MC_Corr[_Nr]<<","<<MC_Emp[_Nr]<<","<<MC_Shift[_Nr]<<","<<MC_Ctrl[_Nr]<<")")
+  _Nr = _Nr+1
+UNTIL _Nr >= 50
+MCTPROT("PROBEDATA(MC_Name[_Nr], MC_SetVal[_Nr], MC_UTol[_Nr], MC_LTol[_Nr], MC_ActVal[_Nr], MC_Corr[_Nr], MC_Emp[_Nr], MC_Shift[_Nr], MC_Ctrl[_Nr])")
+RET
