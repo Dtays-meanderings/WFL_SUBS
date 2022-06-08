@@ -1,4 +1,7 @@
 DEF REAL _X[3]=SET(1,0,0), _Y[3]=SET(0,1,0), _Z[3]=SET(0,0,1), _A[16], _B[16], _C[16], _PHI=45
+;Matrix A is the point for rotation
+;Matrix B is for transformations and rotations
+;matrix multiplication is not commutative - order matters - right to left (AB ≠ BA)
 
 _A[0]=SET(_X[0], _Y[0], _Z[0], 0, _X[1], _Y[1], _Z[1], 0, _X[2], _Y[2], _Z[2], 0, 0, 0, 0, 1) ;Initial vectors X/Y/Z
 _B[0]=SET( COS(_PHI), -SIN(_PHI), 0, 0, SIN(_PHI), COS(_PHI), 0, 0, 0, 0, 1, 0, 0, 0, 0, 1) ;Z rotation
